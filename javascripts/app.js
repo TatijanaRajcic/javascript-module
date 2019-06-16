@@ -4,7 +4,8 @@
 var rover = {
   direction: "N",
   x: 0,
-  y:0
+  y:0,
+  travelLog: []
 };
 
 // ======================
@@ -65,9 +66,9 @@ function moveForward(rover){
       break;
   }
   console.log("The rover's coordinates are (" + rover.x + "," + rover.y +").");
+  rover.travelLog.push(rover.x,rover.y);
   return rover.direction;
 }
-
 
 function executeCommands(string,rover) {
   for (let i=0;i<string.length;i+=1) {
@@ -81,5 +82,6 @@ function executeCommands(string,rover) {
       console.log("Your command number " + i + " with value of " + string[i] + " is not valid.");
     }
   }
-  return rover.direction;
+  console.log(rover.travelLog);
 }
+
