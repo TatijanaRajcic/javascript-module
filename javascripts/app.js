@@ -95,10 +95,49 @@ function executeCommands(string,rover) {
       turnRight(rover);
     } else if (string[i]==="l") {
       turnLeft(rover);
+    } else if (string[i]==="b") {
+      moveBackwards(rover);
     } else {
-      console.log("Your command number " + i + " with value of " + string[i] + " is not valid.");
+      console.log("Some of your commands are not valid.");
     }
   }
   console.log(rover.travelLog);
 }
 
+function moveBackwards(rover){
+  console.log("moveBackwards was called");
+  switch(rover.direction) {
+    case "N":
+      if (rover.y !==9) {
+        rover.y +=1;
+      }
+      else {
+        console.log("Not possible. Out of grid.");
+      }
+      break;
+    case "W": 
+      if (rover.x !==9) {
+        rover.x +=1;
+      } else {
+        console.log("Not possible. Out of grid.");
+      }
+      break;
+    case "S": 
+      if (rover.y !==0) {
+        rover.y -=1;
+      } else {
+        console.log("Not possible. Out of grid.");
+      }
+      break;
+    case "E": 
+      if (rover.x !==0) {
+        rover.x -=1;
+      } else {
+        console.log("Not possible. Out of grid.");
+      }
+      break;
+  }
+  console.log("The rover's coordinates are (" + rover.x + "," + rover.y +").");
+  rover.travelLog.push(rover.x,rover.y);
+  return rover.direction;
+}
