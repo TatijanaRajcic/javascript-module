@@ -52,17 +52,34 @@ function turnRight(rover){
 function moveForward(rover){
   console.log("moveForward was called");
   switch(rover.direction) {
-    case "N": 
-      rover.y -=1;
+    case "N":
+      if (rover.y !==0) {
+        rover.y -=1;
+      }
+      else {
+        console.log("Not possible. Out of grid.");
+      }
       break;
     case "W": 
-      rover.x -=1;
+      if (rover.x !==0) {
+        rover.x -=1;
+      } else {
+        console.log("Not possible. Out of grid.");
+      }
       break;
     case "S": 
-      rover.y +=1;
+      if (rover.y !==9) {
+        rover.y +=1;
+      } else {
+        console.log("Not possible. Out of grid.");
+      }
       break;
     case "E": 
-      rover.x +=1;
+      if (rover.x !==9) {
+        rover.x +=1;
+      } else {
+        console.log("Not possible. Out of grid.");
+      }
       break;
   }
   console.log("The rover's coordinates are (" + rover.x + "," + rover.y +").");
