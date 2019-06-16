@@ -25,6 +25,7 @@ function turnLeft(rover){
       break;
   }
   console.log("The rover is currently facing " + rover.direction);
+  return rover.direction;
 }
 
 function turnRight(rover){
@@ -44,6 +45,7 @@ function turnRight(rover){
       break;
   }
   console.log("The rover is currently facing " + rover.direction);
+  return rover.direction;
 }
 
 function moveForward(rover){
@@ -63,6 +65,21 @@ function moveForward(rover){
       break;
   }
   console.log("The rover's coordinates are (" + rover.x + "," + rover.y +").");
+  return rover.direction;
 }
 
 
+function executeCommands(string,rover) {
+  for (let i=0;i<string.length;i+=1) {
+    if (string[i]==="f") {
+      moveForward(rover);
+    } else if (string[i]==="r") {
+      turnRight(rover);
+    } else if (string[i]==="l") {
+      turnLeft(rover);
+    } else {
+      console.log("Your command number " + i + " with value of " + string[i] + " is not valid.");
+    }
+  }
+  return rover.direction;
+}
