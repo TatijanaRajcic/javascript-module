@@ -8,44 +8,44 @@ var rover = {
 // ======================
 function turnLeft(rover){
   console.log("turnLeft was called!");
+  switch(rover.direction) {
+    case "N": 
+      rover.direction = "W";
+      break;
+    case "W": 
+      rover.direction = "S";
+      break;
+    case "S": 
+      rover.direction = "E";
+      break;
+    case "E": 
+      rover.direction = "N";
+      break;
+  }
+  console.log(rover.direction);
 }
 
 function turnRight(rover){
   console.log("turnRight was called!");
+  switch(rover.direction) {
+    case "N": 
+      rover.direction = "E";
+      break;
+    case "W": 
+      rover.direction = "N";
+      break;
+    case "S": 
+      rover.direction = "W";
+      break;
+    case "E": 
+      rover.direction = "S";
+      break;
+  }
+  console.log(rover.direction);
 }
 
 function moveForward(rover){
-  console.log("moveForward was called")
+  console.log("moveForward was called");
 }
 
-// TURNING THE ROVER
-// ======================
-function nextMove(move,rover) {
-  switch(move) {
-    case "left":
-      if (rover.direction === "N") {
-        rover.direction = "W";
-      } else if (rover.direction === "W") {
-        rover.direction = "S";
-      } else if (rover.direction === "S") {
-        rover.direction = "E";
-      } else {
-        rover.direction = "N";
-      };
-      turnLeft();
-      break;
-    case "right":
-      if (rover.direction === "N") {
-        rover.direction = "E";
-      } else if (rover.direction === "W") {
-        rover.direction = "N";
-      } else if (rover.direction === "S") {
-        rover.direction = "W";
-      } else {
-        rover.direction = "S";
-      }; 
-      turnRight();
-      break;
-  }
-}
 
