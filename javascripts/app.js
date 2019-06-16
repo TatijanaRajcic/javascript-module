@@ -3,6 +3,8 @@
 
 var rover = {
   direction: "N",
+  x: 0,
+  y:0
 };
 
 // ======================
@@ -22,7 +24,7 @@ function turnLeft(rover){
       rover.direction = "N";
       break;
   }
-  console.log(rover.direction);
+  console.log("The rover is currently facing " + rover.direction);
 }
 
 function turnRight(rover){
@@ -41,11 +43,26 @@ function turnRight(rover){
       rover.direction = "S";
       break;
   }
-  console.log(rover.direction);
+  console.log("The rover is currently facing " + rover.direction);
 }
 
 function moveForward(rover){
   console.log("moveForward was called");
+  switch(rover.direction) {
+    case "N": 
+      rover.y -=1;
+      break;
+    case "W": 
+      rover.x -=1;
+      break;
+    case "S": 
+      rover.y +=1;
+      break;
+    case "E": 
+      rover.x +=1;
+      break;
+  }
+  console.log("The rover's coordinates are (" + rover.x + "," + rover.y +").");
 }
 
 
