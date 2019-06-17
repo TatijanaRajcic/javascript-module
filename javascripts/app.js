@@ -130,8 +130,8 @@ function moveBackwards(rover){
     case "N":
       if (rover.y === 9) {
         console.log("Not possible. Out of grid.");
-      } else if (rover.board[y+1][x] === "Danger") {
-        console.log("Danger ahead.");
+      } else if (rover.board[rover.y+1][rover.x] === "Danger") {
+        console.log("Danger behind.");
       } else {
         rover.y +=1;
       }
@@ -139,8 +139,8 @@ function moveBackwards(rover){
     case "W": 
       if (rover.x ===9) {
         console.log("Not possible. Out of grid.");
-      } else if (rover.board[y][x+1] === "Danger") {
-        console.log("Danger ahead.");
+      } else if (rover.board[rover.y][rover.x+1] === "Danger") {
+        console.log("Danger behind.");
       } else {
         rover.x +=1;
       }
@@ -148,8 +148,8 @@ function moveBackwards(rover){
     case "S": 
       if (rover.y ===0) {
         console.log("Not possible. Out of grid.");
-      } else if (rover.board[y-1][x] === "Danger") {
-        console.log("Danger ahead.");
+      } else if (rover.board[rover.y-1][rover.x] === "Danger") {
+        console.log("Danger behind.");
       } else {
         rover.y -=1;
       }
@@ -157,8 +157,8 @@ function moveBackwards(rover){
     case "E": 
       if (rover.x ===0) {
         console.log("Not possible. Out of grid.");
-      } else if (rover.board[y][x-1] === "Danger") {
-        console.log("Danger ahead.");
+      } else if (rover.board[rover.y][rover.x-1] === "Danger") {
+        console.log("Danger behind.");
       } else {
         rover.x -=1;
       }
